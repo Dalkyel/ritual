@@ -356,6 +356,7 @@ function loadSummaries() {
 }
 
 function toggleSummaryPanel() {
+  summaryPanel.classList.remove('hidden');
   summaryPanel.classList.toggle('visible');
   if (summaryPanel.classList.contains('visible') && summaryContent.innerHTML === '') {
     loadSummaries();
@@ -363,4 +364,7 @@ function toggleSummaryPanel() {
 }
 
 btnSummaries.addEventListener('click', toggleSummaryPanel);
-summaryClose.addEventListener('click', () => summaryPanel.classList.remove('visible'));
+summaryClose.addEventListener('click', () => {
+  summaryPanel.classList.remove('visible');
+  summaryPanel.classList.add('hidden');
+});
